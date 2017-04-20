@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let numberOfViewsPerRow = 10
+    let numberOfViewsPerRow = 15
     
     var cellViews = [String: UIView]()
 
@@ -19,10 +19,10 @@ class ViewController: UIViewController {
     super.viewDidLoad()
         
         
-        let numberOfViewsPerRow = 10
+
         let width = view.frame.width / CGFloat(numberOfViewsPerRow)
         
-        for j in 0...20{
+        for j in 0...30{
             
             
         for i in 0...numberOfViewsPerRow{
@@ -30,7 +30,7 @@ class ViewController: UIViewController {
             redView.backgroundColor = randomColor()
             redView.layer.borderColor = UIColor.black.cgColor
             redView.layer.borderWidth = 1.0
-            redView.frame = CGRect(x: CGFloat(i) * width, y: CGFloat(j) * width, width: 100, height: 100)
+            redView.frame = CGRect(x: CGFloat(i) * width, y: CGFloat(j) * width, width: 50, height: 50)
             
             view.addSubview(redView)
             
@@ -45,6 +45,8 @@ class ViewController: UIViewController {
     }
     
     
+    var selectedCell: UIView? = nil
+    
     func handlePan(gesture: UIPanGestureRecognizer){
         let location = gesture.location(in: view)
         print(location)
@@ -57,23 +59,34 @@ class ViewController: UIViewController {
         
         
         let key = "\(i) \(j)"
+        
+        
 
         
-        let redView = cellViews[key]
-        redView?.backgroundColor = .white
+        guard let redView = cellViews[key] else {return}
+
+        if selectedCell != redView{
+            
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+                self.selectedCell?.layer.transform = CATransform3DIdentity
+            }, completion: nil)
+            
+        }
+        
+        selectedCell = redView
+        
+        view.bringSubview(toFront: redView)
+        
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            redView.layer.transform = CATransform3DMakeScale(3, 3, 3)
+        }, completion: nil)
         
         
-//        var loopCount = 0
-//        for subview in view.subviews{
-//            
-//            if subview.frame.contains(location){
-//            
-//            subview.backgroundColor = .black
-//                //print("loop count = \(loopCount)")
-//                
-//            }
-//            loopCount += 1
-//        }
+        if gesture.state == .ended{
+            UIView.animate(withDuration: 0.5, delay: 0.25, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
+                redView.layer.transform = CATransform3DIdentity
+            }, completion: nil )
+        }
         
     }
     private func randomColor()-> UIColor{
