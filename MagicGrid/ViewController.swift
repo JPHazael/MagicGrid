@@ -8,11 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, Magical {
     
     let numberOfViewsPerRow = 15
     
     var cellViews = [String: UIView]()
+    var selectedCell: UIView? = nil
 
 
     override func viewDidLoad() {
@@ -45,7 +46,6 @@ class ViewController: UIViewController {
     }
     
     
-    var selectedCell: UIView? = nil
     
     func handlePan(gesture: UIPanGestureRecognizer){
         let location = gesture.location(in: view)
@@ -89,7 +89,7 @@ class ViewController: UIViewController {
         }
         
     }
-    private func randomColor()-> UIColor{
+    internal func randomColor()-> UIColor{
         let red = Float(drand48())
         let green = Float(drand48())
         let blue = Float(drand48())

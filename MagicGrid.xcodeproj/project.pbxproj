@@ -13,6 +13,7 @@
 		84858ECF1EA7FDBE003C5CB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84858ECE1EA7FDBE003C5CB7 /* Assets.xcassets */; };
 		84858ED21EA7FDBE003C5CB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84858ED01EA7FDBE003C5CB7 /* LaunchScreen.storyboard */; };
 		84858EDD1EA7FDBE003C5CB7 /* MagicGridTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84858EDC1EA7FDBE003C5CB7 /* MagicGridTests.swift */; };
+		84D8741E1EAEBFF900315409 /* Magical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8741D1EAEBFF900315409 /* Magical.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		84858ED81EA7FDBE003C5CB7 /* MagicGridTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MagicGridTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84858EDC1EA7FDBE003C5CB7 /* MagicGridTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicGridTests.swift; sourceTree = "<group>"; };
 		84858EDE1EA7FDBE003C5CB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84D8741D1EAEBFF900315409 /* Magical.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Magical.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				84858EC71EA7FDBE003C5CB7 /* AppDelegate.swift */,
 				84858EC91EA7FDBE003C5CB7 /* ViewController.swift */,
+				84D8741D1EAEBFF900315409 /* Magical.swift */,
 				84858ECB1EA7FDBE003C5CB7 /* Main.storyboard */,
 				84858ECE1EA7FDBE003C5CB7 /* Assets.xcassets */,
 				84858ED01EA7FDBE003C5CB7 /* LaunchScreen.storyboard */,
@@ -202,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84858ECA1EA7FDBE003C5CB7 /* ViewController.swift in Sources */,
+				84D8741E1EAEBFF900315409 /* Magical.swift in Sources */,
 				84858EC81EA7FDBE003C5CB7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +418,7 @@
 				84858EE31EA7FDBE003C5CB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		84858EE41EA7FDBE003C5CB7 /* Build configuration list for PBXNativeTarget "MagicGridTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +427,7 @@
 				84858EE61EA7FDBE003C5CB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
