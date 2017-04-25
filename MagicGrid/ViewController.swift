@@ -31,7 +31,7 @@ class ViewController: UIViewController, Magical {
             redView.backgroundColor = UIColor.randomColor()
             redView.layer.borderColor = UIColor.black.cgColor
             redView.layer.borderWidth = 1.0
-            redView.frame = CGRect(x: CGFloat(i) * width, y: CGFloat(j) * width, width: 50, height: 50)
+            redView.frame = CGRect(x: CGFloat(i) * width, y: CGFloat(j) * width, width: 30, height: 30)
             
             view.addSubview(redView)
             
@@ -89,14 +89,5 @@ class ViewController: UIViewController, Magical {
         }
         
     }
-//    internal func randomColor()-> UIColor{
-//        let red = Float(drand48())
-//        let green = Float(drand48())
-//        let blue = Float(drand48())
-//        
-//        return UIColor(colorLiteralRed: red , green: green, blue: blue, alpha: 1.0)
-//    }
-
-
 }
 

@@ -9,8 +9,8 @@
 import UIKit
 
 protocol Magical {
-    var cellViews: [String: UIView]{ get }
-    var selectedCell: UIView?{ get }
+    var cellViews: [String: UIView]{ get set }
+    var selectedCell: UIView?{ get set }
 }
 
 extension UIColor{
