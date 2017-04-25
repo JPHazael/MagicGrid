@@ -13,8 +13,10 @@ protocol Magical {
     var selectedCell: UIView?{ get set }
 }
 
-extension UIColor{
-    static func randomColor()-> UIColor{
+extension Magical{
+    
+    
+    var randomColor: UIColor{
         let red = Float(drand48())
         let green = Float(drand48())
         let blue = Float(drand48())

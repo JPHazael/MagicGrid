@@ -28,7 +28,7 @@ class ViewController: UIViewController, Magical {
             
         for i in 0...numberOfViewsPerRow{
             let redView = UIView()
-            redView.backgroundColor = UIColor.randomColor()
+            redView.backgroundColor = randomColor
             redView.layer.borderColor = UIColor.black.cgColor
             redView.layer.borderWidth = 1.0
             redView.frame = CGRect(x: CGFloat(i) * width, y: CGFloat(j) * width, width: 30, height: 30)
