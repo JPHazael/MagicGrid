@@ -9,8 +9,16 @@
 import UIKit
 
 protocol Magical {
-    var cellViews: [String: UIView]
-    var selectedCell: UIView?
-    
-    func randomColor()-> UIColor
+    var cellViews: [String: UIView]{ get }
+    var selectedCell: UIView?{ get }
+}
+
+extension UIColor{
+    static func randomColor()-> UIColor{
+        let red = Float(drand48())
+        let green = Float(drand48())
+        let blue = Float(drand48())
+        
+        return UIColor(colorLiteralRed: red , green: green, blue: blue, alpha: 1.0)
+    }
 }
