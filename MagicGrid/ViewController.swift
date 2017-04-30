@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, Magical {
+final class ViewController: UIViewController, Magical {
     
     let numberOfViewsPerRow = 15
     
@@ -27,17 +27,17 @@ class ViewController: UIViewController, Magical {
             
             
         for i in 0...numberOfViewsPerRow{
-            let redView = UIView()
-            redView.backgroundColor = randomColor
-            redView.layer.borderColor = UIColor.black.cgColor
-            redView.layer.borderWidth = 1.0
-            redView.frame = CGRect(x: CGFloat(i) * width, y: CGFloat(j) * width, width: 30, height: 30)
+            let magicView = UIView()
+            magicView.backgroundColor = randomColor
+            magicView.layer.borderColor = UIColor.black.cgColor
+            magicView.layer.borderWidth = 1.0
+            magicView.frame = CGRect(x: CGFloat(i) * width, y: CGFloat(j) * width, width: 30, height: 30)
             
-            view.addSubview(redView)
+            view.addSubview(magicView)
             
             
             let key = "\(i) \(j)"
-            cellViews[key] = redView
+            cellViews[key] = magicView
             
             }
             
@@ -47,7 +47,7 @@ class ViewController: UIViewController, Magical {
     
     
     
-    func handlePan(gesture: UIPanGestureRecognizer){
+    internal func handlePan(gesture: UIPanGestureRecognizer){
         let location = gesture.location(in: view)
         print(location)
         
@@ -63,9 +63,9 @@ class ViewController: UIViewController, Magical {
         
 
         
-        guard let redView = cellViews[key] else {return}
+        guard let magicView = cellViews[key] else {return}
 
-        if selectedCell != redView{
+        if selectedCell != magicView{
             
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
                 self.selectedCell?.layer.transform = CATransform3DIdentity
@@ -73,18 +73,18 @@ class ViewController: UIViewController, Magical {
             
         }
         
-        selectedCell = redView
+        selectedCell = magicView
         
-        view.bringSubview(toFront: redView)
+        view.bringSubview(toFront: magicView)
         
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-            redView.layer.transform = CATransform3DMakeScale(3, 3, 3)
+            magicView.layer.transform = CATransform3DMakeScale(3, 3, 3)
         }, completion: nil)
         
         
         if gesture.state == .ended{
             UIView.animate(withDuration: 0.5, delay: 0.25, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
-                redView.layer.transform = CATransform3DIdentity
+                magicView.layer.transform = CATransform3DIdentity
             }, completion: nil )
         }
         
